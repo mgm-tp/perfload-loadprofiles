@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+
+    Copyright (c) 2013 mgm technology partners GmbH
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<settings>
+    <operations>
+        <operation>
+            <name>browse</name>
+            <relativeClientLoad>1.0</relativeClientLoad>
+        </operation>
+        <operation>
+            <name>flushcache</name>
+            <relativeClientLoad>1.0</relativeClientLoad>
+        </operation>
+    </operations>
+    <targets>
+        <target>
+            <name>appserver</name>
+            <loadPart>1.0</loadPart>
+        </target>
+    </targets>
+    <clients>
+        <client>
+            <name>client</name>
+            <numDaemons>1</numDaemons>
+            <numProcesses>2</numProcesses>
+            <relativePower>1.0</relativePower>
+        </client>
+    </clients>
+</settings>
