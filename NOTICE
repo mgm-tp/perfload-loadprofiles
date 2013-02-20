@@ -14,11 +14,11 @@ From: 'an unknown organization'
   - Guava: Google Core Libraries for Java (http://code.google.com/p/guava-libraries/guava) com.google.guava:guava:jar:13.0.1
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - miglayout  com.miglayout:miglayout:jar:4.0
-
   - javax.inject (http://code.google.com/p/atinject/) javax.inject:javax.inject:jar:1
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - Glazed Lists (http://publicobject.com/glazedlists/) net.java.dev.glazedlists:glazedlists_java15:jar:1.8.0
-    License: GNU Lesser General Public License  (http://www.gnu.org/copyleft/lesser.html)    License: Mozilla Public License Version 1.1  (http://www.mozilla.org/MPL/MPL-1.1.html)
+    License: GNU Lesser General Public License  (http://www.gnu.org/copyleft/lesser.html)
+    License: Mozilla Public License Version 1.1  (http://www.mozilla.org/MPL/MPL-1.1.html)
 
 From: 'Google, Inc.' (http://www.google.com)
   - Google Guice - Core Library (http://code.google.com/p/google-guice/guice/) com.google.inject:guice:jar:3.0
@@ -32,9 +32,11 @@ From: 'JFree.org' (http://www.jfree.org/)
 
 From: 'QOS.ch' (http://www.qos.ch)
   - Logback Classic Module (http://logback.qos.ch) ch.qos.logback:logback-classic:jar:1.0.9
-    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/legal/epl-v10.html)    License: GNU Lesser General Public License  (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/legal/epl-v10.html)
+    License: GNU Lesser General Public License  (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
   - Logback Core Module (http://logback.qos.ch) ch.qos.logback:logback-core:jar:1.0.9
-    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/legal/epl-v10.html)    License: GNU Lesser General Public License  (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
+    License: Eclipse Public License - v 1.0  (http://www.eclipse.org/legal/epl-v10.html)
+    License: GNU Lesser General Public License  (http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)
   - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.7.2
     License: MIT License  (http://www.opensource.org/licenses/mit-license.php)
 
