@@ -31,10 +31,6 @@
 			<lineEnding>unix</lineEnding>
 			<filtered>true</filtered>
 		</file>
-		<file>
-			<source>${project.basedir}/distribution/config/logback.xml</source>
-			<outputDirectory>/config</outputDirectory>
-		</file>
 	</files>
 	<dependencySets>
 		<dependencySet>

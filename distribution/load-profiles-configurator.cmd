@@ -40,7 +40,9 @@ goto error
 
 :run
 set JAVA_CMD="%JAVA_HOME%\bin\javaw"
-set JAVA_OPTS=%JAVA_OPTS% -Dlogback.configurationFile=config\logback.xml
+
+if exist .\config\logback.xml set JAVA_OPTS=%JAVA_OPTS% -Dlogback.configurationFile=.\config\logback.xml
+
 set JAVA_OPTS=%JAVA_OPTS% -jar .\lib\perfload-loadprofiles-${project.version}.jar %*
 
 call %JAVA_CMD% %JAVA_OPTS%

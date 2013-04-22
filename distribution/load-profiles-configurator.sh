@@ -35,7 +35,9 @@ if [ ! -f "$JAVA_HOME/bin/java" ] ; then
 fi
 
 JAVA_CMD="$JAVA_HOME/bin/java"
-JAVA_OPTS="$JAVA_OPTS -Dlogback.configurationFile=config/logback.xml"
+
+[ -f ./config/logback.xml ] && JAVA_OPTS="$JAVA_OPTS -Dlogback.configurationFile=./config/logback.xml"
+
 JAVA_OPTS="$JAVA_OPTS -jar ./lib/perfload-loadprofiles-${project.version}.jar $@"
 
 exec "$JAVA_CMD" $JAVA_OPTS
