@@ -19,7 +19,7 @@ package com.mgmtp.perfload.loadprofiles.model;
  * @author rnaegele
  */
 public class MarkerEvent implements BaseLoadProfileEvent {
-	public enum Type {
+	public static enum Type {
 		left, right
 	}
 
