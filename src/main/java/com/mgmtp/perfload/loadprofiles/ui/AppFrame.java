@@ -791,6 +791,8 @@ public class AppFrame extends JFrame {
 			tblClients.repaint();
 			tblTargets.repaint();
 			dirty = false;
+			loadProfileConfigFile = null;
+			loadProfileEventsFile = null;
 		}
 	}
 
