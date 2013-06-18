@@ -139,7 +139,6 @@ import com.mgmtp.perfload.loadprofiles.model.LoadEvent;
 import com.mgmtp.perfload.loadprofiles.model.LoadEventComparator;
 import com.mgmtp.perfload.loadprofiles.model.LoadTestConfiguration;
 import com.mgmtp.perfload.loadprofiles.model.MarkerEvent;
-import com.mgmtp.perfload.loadprofiles.model.MarkerEvent.Type;
 import com.mgmtp.perfload.loadprofiles.model.Operation;
 import com.mgmtp.perfload.loadprofiles.model.Target;
 import com.mgmtp.perfload.loadprofiles.ui.action.FileExitAction;
@@ -1069,11 +1068,11 @@ public class AppFrame extends JFrame {
 
 				for (Marker marker : getMarkers()) {
 					double time = marker.left / 60d;
-					MarkerEvent event = new MarkerEvent(marker.name, time, Type.left);
+					MarkerEvent event = new MarkerEvent(marker.name, time, MarkerEvent.Type.left);
 					events.add(event);
 
 					time = marker.right / 60d;
-					event = new MarkerEvent(marker.name, time, Type.right);
+					event = new MarkerEvent(marker.name, time, MarkerEvent.Type.right);
 					events.add(event);
 				}
 
