@@ -25,7 +25,7 @@
 			<filtered>true</filtered>
 		</file>
 		<file>
-			<source>${project.basedir}/distribution/load-profiles-configurator.sh</source>
+			<source>${project.basedir}/distribution/load-profiles-configurator</source>
 			<outputDirectory>/</outputDirectory>
 			<fileMode>755</fileMode>
 			<lineEnding>unix</lineEnding>
