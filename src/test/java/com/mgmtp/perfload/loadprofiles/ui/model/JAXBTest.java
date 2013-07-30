@@ -46,14 +46,14 @@ public class JAXBTest {
 
 		Client cl1 = new Client();
 		cl1.setName("client1");
-		cl1.setNumDaemons(2);
+		cl1.setDaemonId(1);
 		cl1.setNumProcesses(2);
 		cl1.setRelativePower(.5d);
 		config.getClients().add(cl1);
 
 		Client cl2 = new Client();
 		cl2.setName("client2");
-		cl2.setNumDaemons(3);
+		cl2.setDaemonId(2);
 		cl2.setNumProcesses(3);
 		cl2.setRelativePower(.7d);
 		config.getClients().add(cl2);

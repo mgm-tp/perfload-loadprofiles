@@ -315,15 +315,15 @@ public class SettingsDialog extends JDialog implements ListEventListener<Abstrac
 
 		TableFormat<Client> clientsTableFormat = GlazedLists
 				.tableFormat(Client.class,
-						new String[] { "name", "numDaemons", "numProcesses", "relativePower" },
-						new String[] { "Name", "# of Daemons", "# of Processes", "Rel. Power" }, new boolean[] { true, true,
+						new String[] { "daemonId", "name", "numProcesses", "relativePower" },
+						new String[] { "Daemon ID", "Name", "# of Processes", "Rel. Power" }, new boolean[] { false, true,
 								true, true });
 		EventTableModel<Client> clientsModel = new EventTableModel<Client>(clients, clientsTableFormat);
 		tblClients.setModel(clientsModel);
-		tblClients.setColumnWidths(200, 80, 80, 60);
+		tblClients.setColumnWidths(80, 200, 80, 60);
 		tblClients.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
-		tblClients.getColumnModel().getColumn(0).setCellEditor(new StringCellEditor(tblClients, clients));
-		tblClients.getColumnModel().getColumn(1).setCellEditor(new IntegerCellEditor());
+		//		tblClients.getColumnModel().getColumn(0).setCellEditor(new IntegerCellEditor());
+		tblClients.getColumnModel().getColumn(1).setCellEditor(new StringCellEditor(tblClients, clients));
 		tblClients.getColumnModel().getColumn(2).setCellEditor(new IntegerCellEditor());
 		column = tblClients.getColumnModel().getColumn(3);
 		column.setCellEditor(new DoubleCellEditor());
@@ -560,7 +560,9 @@ public class SettingsDialog extends JDialog implements ListEventListener<Abstrac
 	private class BtnAddClientActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(final ActionEvent e) {
-			addCoreDataObject(clients, new Client(), tblClients);
+			Client client = new Client();
+			client.setDaemonId(clients.size() + 1);
+			addCoreDataObject(clients, client, tblClients);
 		}
 	}
 
@@ -568,6 +570,9 @@ public class SettingsDialog extends JDialog implements ListEventListener<Abstrac
 		@Override
 		public void actionPerformed(final ActionEvent e) {
 			deleteCoreDataObject(clients, tblClients);
+			for (int i = 0, len = clients.size(); i < len; ++i) {
+				clients.get(i).setDaemonId(i + 1);
+			}
 		}
 	}
 

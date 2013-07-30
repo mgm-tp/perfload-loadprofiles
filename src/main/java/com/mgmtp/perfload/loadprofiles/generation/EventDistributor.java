@@ -16,6 +16,7 @@
 package com.mgmtp.perfload.loadprofiles.generation;
 
 import static com.google.common.base.Preconditions.checkState;
+import static com.google.common.collect.Lists.newArrayList;
 
 import java.io.File;
 import java.io.IOException;
@@ -81,13 +82,13 @@ public class EventDistributor {
 		double[] relativeClientPower = getRelativeClientPower(loadTestConfiguration);
 
 		// distribute events to processes and daemons of all clients
-		ArrayList<LoadEvent> clientEventList = new ArrayList<LoadEvent>();
+		ArrayList<LoadEvent> clientEventList = newArrayList();
 		double[][] cumulatedProcessLoad = new double[numClients][];
 		double[][] deficitProcessLoad = new double[numClients][];
 		int[] processesPerClient = new int[numClients];
 
 		for (int iClient = 0; iClient < numClients; iClient++) {
-			processesPerClient[iClient] = clients.get(iClient).getNumDaemons() * clients.get(iClient).getNumProcesses();
+			processesPerClient[iClient] = 1 * clients.get(iClient).getNumProcesses();
 			cumulatedProcessLoad[iClient] = new double[processesPerClient[iClient]];
 			deficitProcessLoad[iClient] = new double[processesPerClient[iClient]];
 		}
@@ -99,8 +100,7 @@ public class EventDistributor {
 		log.info("totalWeightedNevent = " + totalWeightedNevent);
 		log.info("nClient = " + numClients);
 		for (Client client : clients) {
-			log.info("nDaemon = " + client.getNumDaemons()
-					+ ", nProcess = " + client.getNumProcesses()
+			log.info("daemonId = " + client.getDaemonId() + " , nProcess = " + client.getNumProcesses()
 					+ ", relativeClientPower = " + client.getRelativePower());
 		}
 		for (Operation operation : operations) {
@@ -138,8 +138,7 @@ public class EventDistributor {
 
 			event.setClientId(iClientMax);
 			event.setProcessId(iProcessMax);
-			int daemonId = getDaemonIdForProcessId(iProcessMax, clients, iClientMax);
-			event.setDaemonId(daemonId);
+			event.setDaemonId(clients.get(iClientMax).getDaemonId());
 			clientEventList.add(event);
 
 			if (log.isDebugEnabled()) {
@@ -165,30 +164,6 @@ public class EventDistributor {
 		}
 
 		return clientEventList;
-	}
-
-	/*
-	 * the daemonid has to be unique within one load test configuration of perfLoad. To ensure a
-	 * unique id, daemons are numbered starting at the first daemon of the first client. the
-	 * numbering starts with 1. The performance of this method can be improved by deriving and
-	 * storing the number of the first daemon for each client.
-	 */
-	private static int getDaemonIdForProcessId(final int processId, final List<Client> clients, final int iClient) {
-
-		// derive the numbering of the daemons up to the given client iClient, excluding
-		// this client
-		int daemonNumber = 1;
-		for (int i = 0; i < iClient; i++) {
-			daemonNumber += clients.get(i).getNumDaemons();
-		}
-
-		// continue the numbering for the actual client iClient
-		Client client = clients.get(iClient);
-		int nProcessesPerClient = client.getNumProcesses();
-		int iDaemon = processId / nProcessesPerClient;
-		daemonNumber += iDaemon;
-
-		return daemonNumber;
 	}
 
 	/**

@@ -19,23 +19,23 @@ package com.mgmtp.perfload.loadprofiles.model;
  * @author rnaegele
  */
 public class Client extends AbstractNamedObject<Client> {
-	private int numDaemons = 1;
+	private int daemonId;
 	private int numProcesses = 2;
 	private double relativePower = .5d;
 
 	/**
-	 * @return the numDaemons
+	 * @return the daemonId
 	 */
-	public int getNumDaemons() {
-		return numDaemons;
+	public int getDaemonId() {
+		return daemonId;
 	}
 
 	/**
-	 * @param numDaemons
-	 *            the numDaemons to set
+	 * @param daemonId
+	 *            the daemonId to set
 	 */
-	public void setNumDaemons(final int numDaemons) {
-		this.numDaemons = numDaemons;
+	public void setDaemonId(final int daemonId) {
+		this.daemonId = daemonId;
 	}
 
 	/**
@@ -74,10 +74,6 @@ public class Client extends AbstractNamedObject<Client> {
 		if (result != 0) {
 			return result;
 		}
-		result = numDaemons - o.numDaemons;
-		if (result != 0) {
-			return result;
-		}
 		result = numProcesses - o.numProcesses;
 		if (result != 0) {
 			return result;
@@ -89,7 +85,6 @@ public class Client extends AbstractNamedObject<Client> {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + numDaemons;
 		result = prime * result + numProcesses;
 		long temp;
 		temp = Double.doubleToLongBits(relativePower);
@@ -109,9 +104,6 @@ public class Client extends AbstractNamedObject<Client> {
 			return false;
 		}
 		Client other = (Client) obj;
-		if (numDaemons != other.numDaemons) {
-			return false;
-		}
 		if (numProcesses != other.numProcesses) {
 			return false;
 		}

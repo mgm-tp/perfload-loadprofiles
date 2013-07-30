@@ -95,7 +95,7 @@ public class EventDistributorTest {
 		// follow the given load curve of the operation.
 		for (int iOperation = 0; iOperation < nOperation; iOperation++) {
 			PlotFileCreator.createOperationHistogram(createPlotFile("EventDistributionHistogram_"
-					+ loadCurves.get(iOperation).getName()), clientEventList, 
+					+ loadCurves.get(iOperation).getName()), clientEventList,
 					loadCurves.get(iOperation).getName(), 19, 0., 9.5, LoadCurveCalculator.timeUnit_minute);
 		}
 
@@ -108,8 +108,8 @@ public class EventDistributorTest {
 
 		// create the result List
 		EventDistributor
-				.writeEventListForPerfLoadClientsToFile(createEventListFile("EventDistributorTest"), 
-						"# EventDistributorTest " + new Date(),clientEventList);
+				.writeEventListForPerfLoadClientsToFile(createEventListFile("EventDistributorTest"),
+						"# EventDistributorTest " + new Date(), clientEventList);
 
 	}
 
@@ -213,13 +213,13 @@ public class EventDistributorTest {
 		String operationName1 = "LStB";
 		String operationName2 = "UStVA";
 		Client client1 = new Client();
-		client1.setNumDaemons(1);
+		client1.setDaemonId(1);
 		client1.setNumProcesses(5);
 		client1.setRelativePower(0.5);
 		loadTestConfiguration.getClients().add(client1);
 
 		Client client2 = new Client();
-		client2.setNumDaemons(1);
+		client2.setDaemonId(2);
 		client2.setNumProcesses(5);
 		client2.setRelativePower(0.5);
 		loadTestConfiguration.getClients().add(client2);
