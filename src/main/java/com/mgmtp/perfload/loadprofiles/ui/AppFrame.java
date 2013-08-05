@@ -1010,7 +1010,7 @@ public class AppFrame extends JFrame {
 	 */
 	@Subscribe
 	public void exportEventListForPerfLoad(final ToolsExportEventListAction.Event e) throws IOException {
-		if (checkLoadProfileEntityDirty()) {
+		if (checkLoadProfileEntityDirty() && checkLoadProfilePropertiesDirty()) {
 			File dir = loadProfileEventsFile != null ? loadProfileEventsFile : loadProfileConfigFile.getParentFile();
 			JFileChooser fc = SwingUtils.createFileChooser(dir, "Load Profile BaseLoadProfileEvent Files (*.perfload)",
 					"perfload");
@@ -1504,7 +1504,9 @@ public class AppFrame extends JFrame {
 				lpc.getClients().add((Client) sd.getBaseObject());
 			}
 		}
-		lpc.getLoadProfileEntities().addAll(loadProfilesController.getTreeItems());
+		EventList<LoadProfileEntity> treeItems = loadProfilesController.getTreeItems();
+		Collections.sort(treeItems);
+		lpc.getLoadProfileEntities().addAll(treeItems);
 		return lpc;
 	}
 
