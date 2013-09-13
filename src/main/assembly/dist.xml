@@ -35,13 +35,13 @@
 	</fileSets>
 	<files>
 		<file>
-			<source>${project.basedir}/distribution/load-profiles-configurator.cmd</source>
+			<source>${project.basedir}/distribution/load-profile-editor.cmd</source>
 			<outputDirectory>/</outputDirectory>
 			<lineEnding>crlf</lineEnding>
 			<filtered>true</filtered>
 		</file>
 		<file>
-			<source>${project.basedir}/distribution/load-profiles-configurator</source>
+			<source>${project.basedir}/distribution/load-profile-editor</source>
 			<outputDirectory>/</outputDirectory>
 			<fileMode>775</fileMode>
 			<lineEnding>lf</lineEnding>

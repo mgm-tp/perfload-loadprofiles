@@ -202,7 +202,7 @@ public class AppFrame extends JFrame {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AppFrame.class);
 
-	private static String APP_TITLE = "perfLoad - Load Profile Configurator";
+	private static String APP_TITLE = "perfLoad - Load Profile Editor";
 
 	private final EventBus eventBus = new EventBus();
 
@@ -765,8 +765,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Creates a new load profile configuration. This method is registered on the {@link EventBus}
-	 * and called when the specified event is posted.
+	 * Creates a new load profile configuration. This method is registered on the {@link EventBus} and called when the specified
+	 * event is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -797,8 +797,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Opens a load profile configuration. This method is registered on the {@link EventBus} and
-	 * called when the specified event is posted.
+	 * Opens a load profile configuration. This method is registered on the {@link EventBus} and called when the specified event
+	 * is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -851,8 +851,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Saves a load profile configuration. This method is registered on the {@link EventBus} and
-	 * called when the specified event is posted.
+	 * Saves a load profile configuration. This method is registered on the {@link EventBus} and called when the specified event
+	 * is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -863,8 +863,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Saves a load profile configuration under a new name. This method is registered on the
-	 * {@link EventBus} and called when the specified event is posted.
+	 * Saves a load profile configuration under a new name. This method is registered on the {@link EventBus} and called when the
+	 * specified event is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -875,8 +875,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Saves the load curve configuration to a file. If the configuration has not been saved before
-	 * or if {@code saveAs} is {@code true}, a save dialog is shown for specifying the file.
+	 * Saves the load curve configuration to a file. If the configuration has not been saved before or if {@code saveAs} is
+	 * {@code true}, a save dialog is shown for specifying the file.
 	 * 
 	 * @param saveAs
 	 *            {@code true}, if the save dialog should be shown
@@ -915,8 +915,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Creates a new stairs element. This method is registered on the {@link EventBus} and called
-	 * when the specified event is posted.
+	 * Creates a new stairs element. This method is registered on the {@link EventBus} and called when the specified event is
+	 * posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -933,8 +933,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Creates a new one-time element. This method is registered on the {@link EventBus} and called
-	 * when the specified event is posted.
+	 * Creates a new one-time element. This method is registered on the {@link EventBus} and called when the specified event is
+	 * posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -951,8 +951,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Creates a new marker element. This method is registered on the {@link EventBus} and called
-	 * when the specified event is posted.
+	 * Creates a new marker element. This method is registered on the {@link EventBus} and called when the specified event is
+	 * posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -969,8 +969,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Deletes the selected load profile entity. This method is registered on the {@link EventBus}
-	 * and called when the specified event is posted.
+	 * Deletes the selected load profile entity. This method is registered on the {@link EventBus} and called when the specified
+	 * event is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -1002,8 +1002,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Exports the events file for perfLoad tests. This method is registered on the {@link EventBus}
-	 * and called when the specified event is posted.
+	 * Exports the events file for perfLoad tests. This method is registered on the {@link EventBus} and called when the specified
+	 * event is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
@@ -1122,8 +1122,8 @@ public class AppFrame extends JFrame {
 	}
 
 	/**
-	 * Creates a new load profile configuration. This method is registered on the {@link EventBus}
-	 * and called when the specified event is posted.
+	 * Creates a new load profile configuration. This method is registered on the {@link EventBus} and called when the specified
+	 * event is posted.
 	 * 
 	 * @param e
 	 *            the event that triggers calling of this method when posted on the event bus
