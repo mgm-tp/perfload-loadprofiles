@@ -54,7 +54,7 @@ public class AboutDialog extends JDialog {
 		contentPanel.setLayout(new MigLayout("", "[grow]", "[]10px[][]20px[]10px"));
 		{
 			JPanel panel = new JPanel();
-			panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+			//			panel.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 			panel.setName("panel");
 			contentPanel.add(panel, "cell 0 0,grow");
 			panel.setLayout(new BorderLayout(0, 0));
@@ -63,11 +63,11 @@ public class AboutDialog extends JDialog {
 				panel.add(lblLogo);
 				lblLogo.setName("lblLogo");
 				lblLogo.setIcon(new ImageIcon(Thread.currentThread().getContextClassLoader()
-						.getResource("com/mgmtp/perfload/loadprofiles/ui/logo.png")));
+						.getResource("com/mgmtp/perfload/loadprofiles/ui/perfLoad_Logo_wort.png")));
 			}
 		}
 		{
-			JLabel lblPerfloadLoadProfiles = new JLabel("perfLoad - Load Profiles Configurator");
+			JLabel lblPerfloadLoadProfiles = new JLabel("perfLoad - Load Profile Editor");
 			lblPerfloadLoadProfiles.setFont(new Font(getFont().getName(), Font.BOLD, 18));
 			lblPerfloadLoadProfiles.setName("lblPerfloadLoadProfiles");
 			contentPanel.add(lblPerfloadLoadProfiles, "cell 0 1,alignx center");
@@ -79,7 +79,7 @@ public class AboutDialog extends JDialog {
 			contentPanel.add(lblVersion, "cell 0 2,alignx center");
 		}
 		{
-			JLabel lblCopyright = new JLabel("© 2012 by mgm technology partners GmbH. All rights reserved.");
+			JLabel lblCopyright = new JLabel("© 2013 by mgm technology partners GmbH. All rights reserved.");
 			lblCopyright.setName("lblCopyright");
 			contentPanel.add(lblCopyright, "cell 0 3,alignx center");
 		}
