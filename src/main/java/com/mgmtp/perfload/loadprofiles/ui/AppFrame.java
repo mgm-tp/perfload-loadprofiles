@@ -1057,7 +1057,8 @@ public class AppFrame extends JFrame {
 					// We must add one event per target
 					for (Target target : oneTime.targets) {
 						LoadEvent event = new LoadEvent(startTimeInHours, oneTime.getOperation());
-						event.setProcessId(1);
+						event.setProcessId(0); // 1 added later to make it zero-based
+						event.setDaemonId(1);
 						event.setTarget(target);
 						clientEventList.add(event);
 					}
