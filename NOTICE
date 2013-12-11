@@ -13,7 +13,10 @@ From: 'an unknown organization'
     License: Creative Commons Attribution 2.5 License  (http://creativecommons.org/licenses/by/2.5/)
   - Guava: Google Core Libraries for Java (http://code.google.com/p/guava-libraries/guava) com.google.guava:guava:jar:13.0.1
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - miglayout  com.miglayout:miglayout:jar:4.0
+  - MiGLayout Core (http://www.miglayout.com/miglayout-core/) com.miglayout:miglayout-core:jar:4.2
+    License: BSD  (http://www.debian.org/misc/bsd.license)
+  - MiGLayout Swing (http://www.miglayout.com/miglayout-swing/) com.miglayout:miglayout-swing:jar:4.2
+    License: BSD  (http://www.debian.org/misc/bsd.license)
   - javax.inject (http://code.google.com/p/atinject/) javax.inject:javax.inject:jar:1
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - Glazed Lists (http://publicobject.com/glazedlists/) net.java.dev.glazedlists:glazedlists_java15:jar:1.8.0
