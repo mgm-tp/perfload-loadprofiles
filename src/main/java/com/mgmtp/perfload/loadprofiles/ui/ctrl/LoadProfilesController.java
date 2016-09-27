@@ -56,6 +56,7 @@ import com.mgmtp.perfload.loadprofiles.ui.util.IsStairsPredicate;
 import com.mgmtp.perfload.loadprofiles.ui.util.LoadProfileEntityToOneTimeFunction;
 import com.mgmtp.perfload.loadprofiles.ui.util.LoadProfileEntityToStairsFunction;
 import com.mgmtp.perfload.loadprofiles.ui.util.Point;
+import java.util.List;
 
 /**
  * @author rnaegele
@@ -189,12 +190,12 @@ public class LoadProfilesController {
 		ltc.getOperations().addAll(operations);
 
 		GraphPointsCalculator calc = new GraphPointsCalculator();
-		Map<String, Set<Point>> points = calc.calculatePoints(transform(filter(treeItems, new IsStairsPredicate()),
+		Map<String, List<Point>> points = calc.calculatePoints(transform(filter(treeItems, new IsStairsPredicate()),
 				new LoadProfileEntityToStairsFunction()));
 
-		for (Entry<String, Set<Point>> entry : points.entrySet()) {
+		for (Entry<String, List<Point>> entry : points.entrySet()) {
 			String operationName = entry.getKey();
-			Set<Point> operationPoints = entry.getValue();
+			List<Point> operationPoints = entry.getValue();
 
 			LoadCurveAssignment loadCurveAssignment = new LoadCurveAssignment();
 			loadCurveAssignment.setOperationName(operationName);

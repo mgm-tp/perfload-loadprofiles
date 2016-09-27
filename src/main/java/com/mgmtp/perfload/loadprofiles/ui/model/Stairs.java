@@ -47,6 +47,7 @@ public class Stairs extends CurveAssignment {
 	@Override
 	public String toString() {
 		ToStringBuilder tsb = new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		tsb.append("operation", operation.toString());
 		tsb.append("t0", t0);
 		tsb.append("a", a);
 		tsb.append("b", b);
@@ -55,4 +56,46 @@ public class Stairs extends CurveAssignment {
 		tsb.append("steps", numSteps);
 		return tsb.toString();
 	}
+
+    @Override
+    public int hashCode() {
+        int hash = super.hashCode();
+        hash = 37 * hash + this.a;
+        hash = 37 * hash + this.b;
+        hash = 37 * hash + this.c;
+        hash = 37 * hash + this.h;
+        hash = 37 * hash + this.numSteps;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        if (!super.equals(obj)) {
+            return false;
+        }
+        final Stairs other = (Stairs) obj;
+        if (this.a != other.a) {
+            return false;
+        }
+        if (this.b != other.b) {
+            return false;
+        }
+        if (this.c != other.c) {
+            return false;
+        }
+        if (this.h != other.h) {
+            return false;
+        }
+        if (this.numSteps != other.numSteps) {
+            return false;
+        }
+        return true;
+    }
+
 }

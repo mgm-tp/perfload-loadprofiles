@@ -23,7 +23,7 @@ package com.mgmtp.perfload.loadprofiles.model;
 import java.util.Comparator;
 
 /**
- * For the Load Curve Calculator load events must be sorted according to time. The sorting criteria
+ * For the Load Curve Calculator load events must be sorted according to time. The other sorting criteria
  * are arbitrarily chosen.
  * 
  * @author mvarendo

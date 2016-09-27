@@ -207,11 +207,18 @@ public class EventDistributor {
 		ArrayList<LoadEvent> events = new ArrayList<LoadEvent>(nEvents);
 
 		// calculate events from load curve in given time interval
+                double lastTn = 0.;
 		for (int iEvent = 0; iEvent < nEvents; iEvent++) {
 			double eventIndex = iEvent + shift;
 			double Tn = LoadCurveCalculator.deriveStartTime(loadCurve, eventIndex);
 			LoadEvent event = new LoadEvent(Tn, operation);
 			events.add(iEvent, event);
+                        if (iEvent > 0) {
+                            if (Tn < lastTn) {
+                                log.error("Event in wrong sequence iEvent"+iEvent+", lastTn "+lastTn+", Tn "+Tn);
+                            }
+                        }
+                        lastTn = Tn;     
 		}
 
 		// assign events to targets according to load part for each targets
@@ -366,7 +373,7 @@ public class EventDistributor {
 	 * verifies the validity of the given arguments. Throws an IllegalArgumentException, if an
 	 * argument is invalid. For load curves it is checked, that the array and its elements are not
 	 * null. Additionally it is verified, that the time values of the points in the load curve are
-	 * strictly increasing.
+	 * increasing.
 	 */
 	public static void verifyArguments(final LoadTestConfiguration loadTestConfiguration) {
 		for (LoadCurveAssignment assignment : loadTestConfiguration.getLoadCurveAssignments()) {
@@ -380,8 +387,10 @@ public class EventDistributor {
 						+ " is null");
 			}
 			int nPoint = timeValues.length;
+                        log.info("Verifying assignement "+assignment.getLoadCurveName()+":"+assignment.getOperationName()+" with "+nPoint+" points");
 			for (int iPoint = 1; iPoint < nPoint; iPoint++) {
-				if (timeValues[iPoint] <= timeValues[iPoint - 1]) {
+                            log.info("Time Value["+iPoint+"] = "+timeValues[iPoint]);
+				if (timeValues[iPoint] < timeValues[iPoint - 1]) {
 					throw new java.lang.IllegalArgumentException("In loadCurve of assignment " + assignment +
 							"], timeValues[" + Integer.toString(iPoint - 1) + "] >= timeValues[" + iPoint +
 							"], time value of lower point must be smaller than time value of upper point.");

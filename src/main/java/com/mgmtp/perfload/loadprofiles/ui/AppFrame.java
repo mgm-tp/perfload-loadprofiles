@@ -686,9 +686,9 @@ public class AppFrame extends JFrame {
 		Collection<Stairs> loadProfileEnities = transform(filter(loadProfilesController.getTreeItems(), new IsStairsPredicate()),
 				new LoadProfileEntityToStairsFunction());
 		GraphPointsCalculator calc = new GraphPointsCalculator();
-		Map<String, Set<Point>> pointsMap = calc.calculatePoints(loadProfileEnities);
+		Map<String, List<Point>> pointsMap = calc.calculatePoints(loadProfileEnities);
 
-		for (Entry<String, Set<Point>> entry : pointsMap.entrySet()) {
+		for (Entry<String, List<Point>> entry : pointsMap.entrySet()) {
 			final XYSeries series = new XYSeries(entry.getKey());
 			for (Point point : entry.getValue()) {
 				series.add(point.getX(), point.getY());

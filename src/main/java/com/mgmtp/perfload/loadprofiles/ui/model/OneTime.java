@@ -32,6 +32,7 @@ import com.mgmtp.perfload.loadprofiles.model.CurveAssignment;
 import com.mgmtp.perfload.loadprofiles.model.Operation;
 import com.mgmtp.perfload.loadprofiles.model.Target;
 import com.mgmtp.perfload.loadprofiles.model.jaxb.TargetAdapter;
+import java.util.Objects;
 
 /**
  * @author rnaegele
@@ -59,13 +60,41 @@ public class OneTime extends CurveAssignment {
 	@Override
 	public String toString() {
 		ToStringBuilder tsb = new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE);
+		tsb.append("operation", operation);
 		tsb.append("t0", t0);
 		tsb.append("targets", transform(targets, new Function<Target, String>() {
 			@Override
 			public String apply(final Target input) {
-				return input.getName();
+				return input.toString();
 			}
 		}));
 		return tsb.toString();
 	}
+
+    @Override
+    public int hashCode() {
+        int hash = super.hashCode();
+        hash = 71 * hash + Objects.hashCode(this.targets);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        if (!super.equals(obj)) {
+            return false;
+        }
+        final OneTime other = (OneTime) obj;
+        if (!Objects.equals(this.targets, other.targets)) {
+            return false;
+        }
+        return true;
+    }
+
+
 }

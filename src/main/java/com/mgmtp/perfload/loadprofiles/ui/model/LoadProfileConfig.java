@@ -134,4 +134,11 @@ public class LoadProfileConfig {
 	public void setLoadProfileEntities(final List<LoadProfileEntity> loadProfileEntities) {
 		this.loadProfileEntities = loadProfileEntities;
 	}
+
+	@Override
+	public String toString() {
+		return "LoadProfileConfig [name=" + name + ", description=" + description + ", clients=" + clients + ", targets="
+				+ targets + ", loadProfileEntities=" + loadProfileEntities + "]";
+	}
+
 }

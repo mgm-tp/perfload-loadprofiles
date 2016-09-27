@@ -26,7 +26,7 @@ import static com.google.common.collect.Lists.newArrayListWithCapacity;
 import java.util.List;
 
 /**
- * A load curve assignment defines, which operation is executed against which targets (server) on
+ * A load curve assignment defines, which operation is executed against which targets (server)
  * according to which scaled load curve. Operations and load curves are not persisted in this
  * object, only the name of the operation and the name of the load curve.
  * 
